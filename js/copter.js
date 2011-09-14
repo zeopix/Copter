@@ -19,10 +19,28 @@ $(function(){
 				duration: getTime(getFallDistance($("#copter"))),
 				easing: easing
 			});
+  		}else if(event.keyCode == 37)
+  		{
+  			$("#copter").stop().animate({
+				'margin-left': "-400px"
+			}, {
+				duration: getTime(getFallDistance($("#copter"))),
+				easing: easing
+			});
+  			//do left
+  		}else if(event.keyCode == 39){
+  			//d
+  			$("#copter").stop().animate({
+				'margin-left': "400px"
+			}, {
+				duration: getTime(getFallDistance($("#copter"))),
+				easing: easing
+			});
   		}
    	});
 	
 	$("#control").keyup(function(event) {
+		$("#copter").stop();
 		animateFall("#copter");
    	});
 
